@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Site en construction — VIP TAXI 24</title>
+  <meta name="description" content="Site en construction — galerie et contact WhatsApp" />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#98a2b3}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:linear-gradient(180deg,#071121 0%, #0f1724 100%);color:#e6eef5;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px}
+    .wrap{width:100%;max-width:980px}
+    header{display:flex;align-items:center;gap:18px;margin-bottom:18px}
+    .logo{width:56px;height:56px;border-radius:12px;background:conic-gradient(from 180deg,#06b6d4,#7c3aed,#ef4444);display:flex;align-items:center;justify-content:center;font-weight:700}
+    .title h1{margin:0;font-size:20px;letter-spacing:0.2px}
+    .title p{margin:2px 0 0;font-size:13px;color:var(--muted)}
+
+    .card{background:rgba(255,255,255,0.03);border-radius:14px;padding:18px;box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+
+    /* Slider */
+    .slider{position:relative;overflow:hidden;border-radius:10px}
+    .slides{display:flex;transition:transform 0.6s ease}
+    .slide{min-width:100%;user-select:none}
+    .slide img{display:block;width:100%;height:420px;object-fit:cover}
+    .controls{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 10px;pointer-events:none}
+    .btn{background:rgba(0,0,0,0.35);border:none;padding:10px;border-radius:8px;cursor:pointer;pointer-events:auto;color:#fff}
+    .dots{display:flex;gap:8px;justify-content:center;margin-top:12px}
+    .dot{width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,0.2);cursor:pointer}
+    .dot.active{background:var(--accent)}
+
+    /* Coming soon text */
+    .meta{display:flex;align-items:center;justify-content:space-between;margin-top:14px}
+    .meta .left{max-width:70%}
+    .meta h2{margin:0 0 6px;font-size:18px}
+    .meta p{margin:0;color:var(--muted)}
+    .launch{background:linear-gradient(90deg,var(--accent),#7c3aed);padding:8px 14px;border-radius:10px;color:#071121;font-weight:600;border:none}
+
+    /* WhatsApp floating */
+    .whatsapp{position:fixed;right:18px;bottom:18px;z-index:999;display:flex;align-items:center;gap:10px}
+    .wa-btn{width:56px;height:56px;border-radius:999px;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(37,211,102,0.18);text-decoration:none}
+    .wa-btn svg{width:26px;height:26px;display:block}
+    .wa-label{background:rgba(0,0,0,0.55);color:#fff;padding:8px 12px;border-radius:999px;font-weight:600;text-decoration:none}
+
+    /* Responsive */
+    @media(min-width:880px){.slide img{height:520px}}
+    @media(max-width:520px){.meta{flex-direction:column;align-items:flex-start}.meta .left{max-width:100%}.wa-label{display:none}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">P</div>
+      <div class="title">
+        <h1>VIP TAXI 24 — Site en construction</h1>
+        <p>Une course VIP pour tout vos trajets</p>
+      </div>
+    </header>
+
+    <main class="card">
+      <!-- Slider -->
+      <div class="slider" id="slider">
+        <div class="slides" id="slides">
+          <!-- Remplacez les src par vos images (chemins relatifs ou URL) -->
+          <div class="slide"><img src="images/slide1.jpg" alt="Slide 1"></div>
+          <div class="slide"><img src="images/slide2.jpg" alt="Slide 2"></div>
+          <div class="slide"><img src="images/slide3.jpg" alt="Slide 3"></div>
+        </div>
+        <div class="controls">
+          <button class="btn" id="prev" aria-label="Précédent">◀</button>
+          <button class="btn" id="next" aria-label="Suivant">▶</button>
+        </div>
+      </div>
+      <div class="dots" id="dots"></div>
+
+      <div class="meta">
+        <div class="left">
+          <h2>Nous préparons quelque chose de magic!</h2>
+          <p>Page temporaire — contactez-nous via WhatsApp pour plus d'infos.</p>
+        </div>
+        <div>
+          <button class="launch">Bientôt le site pour booker vos trajets avec notre flots de voiture de luxe</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- WhatsApp floating action -->
+  <!-- Remplacez le numéro par le vôtre au format international sans +, ex: 212678920811 -->
+  <div class="whatsapp">
+    <a class="wa-label" href="https://wa.me/212678920811?text=Bonjour%20%F0%9F%91%8B%20Je%20souhaite%20des%20informations" target="_blank" rel="noopener">Contactez-nous</a>
+    <a class="wa-btn" href="https://wa.me/212678920811" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <!-- simple SVG WhatsApp icon -->
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 2C8.27 2 2.5 7.77 2.5 15.5c0 2.85.83 5.5 2.27 7.78L2 30l6.02-2.19c2.07 1.13 4.41 1.73 7 1.73 7.73 0 14.5-5.77 14.5-13.5S23.73 2 16 2z" fill="#fff" opacity="0.06"/>
+        <path d="M23.12 20.07c-.39-1.06-2.27-1.96-3.11-2.09-.82-.13-1.36-.18-1.94.18s-1.12.9-1.37 1.1c-.25.19-.5.21-.92.07-.39-.13-1.66-.61-3.17-1.97-1.17-1.05-1.96-2.35-2.2-2.74-.23-.4-.02-.62.17-.82.17-.17.39-.43.59-.64.2-.21.26-.36.39-.6.13-.23.06-.46-.03-.64-.09-.17-.81-1.94-1.12-2.66-.29-.68-.59-.58-.82-.59-.21-.01-.46-.01-.7-.01-.24 0-.63.09-.96.45s-1.26 1.23-1.26 3.01c0 1.78 1.29 3.5 1.47 3.74.18.24 2.54 3.84 6.16 5.38 3.62 1.53 3.62 1.02 4.27.96.64-.06 2.07-.84 2.36-1.65.29-.8.29-1.48.2-1.63z" fill="#fff"/>
+      </svg>
+    </a>
+  </div>
+
+  <script>
+    // Slider JS: navigation, dots, autoplay
+    (function(){
+      const slidesEl = document.getElementById('slides');
+      const slides = Array.from(document.querySelectorAll('.slide'));
+      const prev = document.getElementById('prev');
+      const next = document.getElementById('next');
+      const dotsEl = document.getElementById('dots');
+      let index = 0;
+      let autoplay = true;
+      let timer = null;
+
+      function goTo(i){
+        index = (i + slides.length) % slides.length;
+        slidesEl.style.transform = `translateX(-${index*100}%)`;
+        updateDots();
+      }
+      function updateDots(){
+        dotsEl.querySelectorAll('.dot').forEach((d,idx)=>{
+          d.classList.toggle('active', idx===index);
+        });
+      }
+
+      // create dots
+      slides.forEach((_,i)=>{
+        const d = document.createElement('button');
+        d.className='dot'; d.setAttribute('aria-label','Slide '+(i+1));
+        d.addEventListener('click',()=>{goTo(i);resetTimer();});
+        dotsEl.appendChild(d);
+      });
+      updateDots();
+
+      prev.addEventListener('click',()=>{goTo(index-1);resetTimer();});
+      next.addEventListener('click',()=>{goTo(index+1);resetTimer();});
+
+      function resetTimer(){
+        if(timer) clearInterval(timer);
+        if(autoplay) timer = setInterval(()=>goTo(index+1), 4500);
+      }
+
+      // pause on hover
+      const slider = document.getElementById('slider');
+      slider.addEventListener('mouseenter',()=>{ if(timer) clearInterval(timer); });
+      slider.addEventListener('mouseleave',()=>{ resetTimer(); });
+
+      // start
+      resetTimer();
+
+      // accessibility: arrow keys
+      document.addEventListener('keydown',(e)=>{
+        if(e.key==='ArrowLeft') prev.click();
+        if(e.key==='ArrowRight') next.click();
+      });
+
+      // lazy fallback: if images missing, replace with placeholders
+      slides.forEach(imgWrap=>{
+        const img = imgWrap.querySelector('img');
+        img.addEventListener('error', ()=>{
+          img.src = 'https://via.placeholder.com/1200x800?text=Image+manquante';
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
